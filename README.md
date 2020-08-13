@@ -1,4 +1,4 @@
-My implementation of quizzler app from Appbrewery's Complete Flutter Development Bootcamp. Below official describtion
+My implementation of quizzler app from Appbrewery's Complete Flutter Development Bootcamp. Official description below
 
 
 # Quizzler ❓
