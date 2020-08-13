@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'question.dart';
 
 void main() => runApp(Quizzler());
 
@@ -38,6 +39,21 @@ class _QuizPageState extends State<QuizPage> {
     true,
     true,
   ];
+
+  Question q1 = Question(
+    q: 'You can lead a cow down stairs but not up stairs.',
+    a: false,
+  );
+
+  Question q2 = Question(
+    q: 'Approximately one quarter of human bones are in the feet.',
+    a: true,
+  );
+
+  Question q3 = Question(
+    q: 'A slug\'s blood is green.',
+    a: true,
+  );
 
   int questionNumber = 0;
 
