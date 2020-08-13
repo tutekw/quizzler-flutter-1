@@ -33,6 +33,12 @@ class _QuizPageState extends State<QuizPage> {
     'A slug\'s blood is green.',
   ];
 
+  List<bool> anwsers = [
+    false,
+    true,
+    true,
+  ];
+
   int questionNumber = 0;
 
   @override
@@ -71,6 +77,23 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
+                bool correctAnwser = anwsers[questionNumber];
+                if (correctAnwser == true) {
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ),
+                  );
+                } else {
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.close,
+                      color: Colors.red,
+                    ),
+                  );
+                }
+
                 questionNumber++;
                 setState(() {});
               },
@@ -90,7 +113,22 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                //The user picked false.
+                bool correctAnwser = anwsers[questionNumber];
+                if (correctAnwser == false) {
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.done,
+                      color: Colors.green,
+                    ),
+                  );
+                } else {
+                  scoreKeeper.add(
+                    Icon(
+                      Icons.close,
+                      color: Colors.red,
+                    ),
+                  );
+                }
                 questionNumber++;
                 setState(() {});
               },
