@@ -34,6 +34,11 @@ class QuizBrain {
   void goToNextQuestion() {
     if (_questionNumber < _questionBank.length - 1) {
       _questionNumber++;
+<<<<<<< HEAD
+=======
+    } else {
+      _questionNumber = _questionBank.length - 1;
+>>>>>>> 2b939253f5c1deb7dc6849f9944414dbb2f816f7
     }
   }
 
