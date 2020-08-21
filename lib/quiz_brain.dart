@@ -37,11 +37,19 @@ class QuizBrain {
     }
   }
 
+  void goToFirstQuestion() {
+    _questionNumber = -1;
+  }
+
   String getQuestionText() {
     return _questionBank[_questionNumber].questionText;
   }
 
   bool getQuestionAnswer() {
     return _questionBank[_questionNumber].questionAnwser;
+  }
+
+  int getQuestionBankLength() {
+    return _questionBank.length;
   }
 }

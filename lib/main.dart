@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'quiz_brain.dart';
 
 QuizBrain quizBrain = QuizBrain();
@@ -29,15 +30,29 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   List<Widget> scoreKeeper = [];
+  int score = 0;
 
   void checkAnswer(bool userPickedAnswer) {
-    if (userPickedAnswer == quizBrain.getQuestionAnswer()) {
+    if (scoreKeeper.length == quizBrain.getQuestionBankLength()) {
+      Alert(
+        style: AlertStyle(backgroundColor: Colors.grey.shade700),
+        context: context,
+        title: "End of Quiz",
+        desc: "Your score is: $score. Try again!",
+      ).show();
+
+      quizBrain.goToFirstQuestion();
+      scoreKeeper = [];
+      score = 0;
+      setState(() {});
+    } else if (userPickedAnswer == quizBrain.getQuestionAnswer()) {
       scoreKeeper.add(
         Icon(
           Icons.done,
           color: Colors.green,
         ),
       );
+      score++;
     } else {
       scoreKeeper.add(
         Icon(
