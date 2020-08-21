@@ -33,7 +33,7 @@ class _QuizPageState extends State<QuizPage> {
   int score = 0;
 
   void checkAnswer(bool userPickedAnswer) {
-    if (scoreKeeper.length == quizBrain.getQuestionBankLength()) {
+    if (scoreKeeper.length == quizBrain.getQuestionBankLength() - 1) {
       Alert(
         style: AlertStyle(backgroundColor: Colors.grey.shade700),
         context: context,
