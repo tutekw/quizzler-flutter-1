@@ -46,6 +46,8 @@ class _QuizPageState extends State<QuizPage> {
         ),
       );
     }
+    quizBrain.goToNextQuestion();
+    setState(() {});
   }
 
   @override
@@ -85,8 +87,6 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 checkAnswer(true);
-                quizBrain.goToNextQuestion();
-                setState(() {});
               },
             ),
           ),
@@ -105,8 +105,6 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 checkAnswer(false);
-                quizBrain.goToNextQuestion();
-                setState(() {});
               },
             ),
           ),
